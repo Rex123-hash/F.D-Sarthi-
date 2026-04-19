@@ -74,7 +74,7 @@ export const FD_RATES = [
   {
     id: 'shriram-1',
     bank: 'Shriram Finance',
-    bankShort: 'Shriram Finance',
+    bankShort: 'Shriram Fin.',
     tenure: '24 months',
     tenureMonths: 24,
     rate: 8.18,
@@ -88,7 +88,7 @@ export const FD_RATES = [
   {
     id: 'mahindra-1',
     bank: 'Mahindra Finance',
-    bankShort: 'Mahindra Finance',
+    bankShort: 'Mahindra Fin.',
     tenure: '36 months',
     tenureMonths: 36,
     rate: 8.05,
