@@ -1,9 +1,8 @@
 .chat-container {
-  position: absolute;
-  inset: 0;
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  min-height: 0;
   background-color: var(--paper);
   overflow: hidden;
 }

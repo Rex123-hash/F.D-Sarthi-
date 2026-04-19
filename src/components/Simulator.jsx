@@ -243,7 +243,7 @@ export default function Simulator({ language, rates }) {
               key={principal}
               className="sim-principal-value"
               initial={{ scale: 1.15, color: '#E8841A' }}
-              animate={{ scale: 1, color: '#1A1A1A' }}
+              animate={{ scale: 1, color: '#F5F0E8' }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
               ₹{principal > 0 ? formatDualNumber(principal, language) : '—'}
