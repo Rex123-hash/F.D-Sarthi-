@@ -28,7 +28,7 @@ function useTypewriter(text, speed = 28) {
 function RateRow({ fd, language, delay = 0, isSenior }) {
   const rate = isSenior ? fd.seniorRate : fd.rate;
   const rateStr = (rate != null) ? formatDualRate(rate, language) : 'N/A';
-  const { displayed, done } = useTypewriter(`${fd.bankShort} - ${rateStr} p.a.`, 22);
+  const { displayed, done } = useTypewriter(`${fd.bankShort}  ${rateStr} p.a.`, 22);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ export default function NoticeBoard({ language, rates }) {
       <div className="nb-slate" key={updateKey}>
         <div className="nb-slate-header">
           <span className="chalk-text nb-slate-subhead">
-            ◈ {seniorMode ? 'SENIOR CITIZEN RATES' : 'GENERAL RATES'} ◈
+            ** {seniorMode ? 'SENIOR CITIZEN RATES' : 'GENERAL RATES'} **
           </span>
         </div>
 
