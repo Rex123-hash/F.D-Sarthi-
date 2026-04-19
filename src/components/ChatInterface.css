@@ -103,11 +103,16 @@
   overflow-y: scroll;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   padding: 16px 16px 36px;
   scroll-padding-bottom: 36px;
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+.chat-messages > * {
+  flex: 0 0 auto;
 }
 
 /* Always-visible scrollbar */
@@ -132,12 +137,13 @@
 }
 
 .chat-scroll-anchor {
-  flex: 0 0 1px;
+  flex: 0 0 20px;
 }
 
 /* ── USER NOTE — torn paper ── */
 .user-note {
   align-self: flex-end;
+  flex: 0 0 auto;
   max-width: 72%;
   position: relative;
 }
@@ -177,6 +183,8 @@
 /* ── OFFICIAL LETTER ── */
 .official-letter-wrap {
   align-self: flex-start;
+  flex: 0 0 auto;
+  width: min(720px, calc(100% - 48px));
   max-width: 88%;
   background: var(--paper);
   border: 2px solid var(--ink);
@@ -267,6 +275,7 @@
 /* ── LOADING ── */
 .loading-letter {
   align-self: flex-start;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -314,6 +323,7 @@
 /* ── ERROR NOTE ── */
 .error-note {
   align-self: center;
+  flex: 0 0 auto;
   background: #FFF;
   border: 2px solid var(--red-stamp);
   padding: 10px 16px;
@@ -384,6 +394,7 @@
 
 .chat-send-btn {
   display: flex;
+  flex: 0 0 86px;
   flex-direction: column;
   align-items: center;
   gap: 2px;
@@ -395,6 +406,7 @@
   cursor: pointer;
   padding: 8px 14px;
   min-width: 68px;
+  height: 58px;
   align-self: stretch;
 }
 
