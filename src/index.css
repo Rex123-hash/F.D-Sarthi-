@@ -1,0 +1,326 @@
+/* ── FD SAATHI — Vernacular Brutalism Design System ── */
+
+:root {
+  --primary: #E8841A;
+  --primary-dark: #C4681A;
+  --ink: #1A1A1A;
+  --ink-light: #2D2D2D;
+  --paper: #F5F0E8;
+  --paper-dark: #EDE6D5;
+  --paper-darker: #E0D5BF;
+  --teal: #2A7A6F;
+  --teal-light: #3A9A8E;
+  --red-stamp: #C0392B;
+  --font-hindi: 'Noto Sans Devanagari', sans-serif;
+  --font-en: 'Space Grotesk', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-en);
+  /* Aged paper texture via CSS noise pattern */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(160,130,80,0.04) 29px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 28px,
+      rgba(160,130,80,0.03) 29px
+    );
+}
+
+/* ── PAPER TEXTURE UTILITY ── */
+.paper-texture {
+  position: relative;
+  background-color: var(--paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* ── INK STAMP UTILITY ── */
+.stamp-border {
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.stamp-border-primary {
+  border: 3px solid var(--primary);
+  box-shadow: 4px 4px 0 var(--primary);
+}
+
+.stamp-border-teal {
+  border: 3px solid var(--teal);
+  box-shadow: 4px 4px 0 var(--teal);
+}
+
+/* ── TYPOGRAPHY SCALE ── */
+.font-hindi { font-family: var(--font-hindi); }
+.font-en    { font-family: var(--font-en); }
+.font-mono  { font-family: var(--font-mono); }
+
+.text-ink-stamp {
+  font-family: var(--font-en);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* ── RUBBER STAMP ── */
+.rubber-stamp {
+  display: inline-block;
+  border: 3px solid var(--red-stamp);
+  color: var(--red-stamp);
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  transform: rotate(-15deg);
+  opacity: 0.85;
+  user-select: none;
+}
+
+/* ── TYPEWRITER LINE ── */
+.typewriter-cursor::after {
+  content: '▋';
+  animation: blink 0.8s step-end infinite;
+  color: var(--primary);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--paper-dark); border-left: 1px solid var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 0; border: 2px solid var(--paper-dark); }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ── CHAI LOADER ── */
+@keyframes chai-pour {
+  from { height: 0%; }
+  to   { height: 100%; }
+}
+
+/* ── SPRING TRANSITIONS (used by Framer) ── */
+.snap-transition {
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── NOTICE BOARD CHALK STYLE ── */
+.chalk-text {
+  font-family: var(--font-mono);
+  color: #F5F0E8;
+  text-shadow:
+    0 0 8px rgba(245,240,232,0.5),
+    1px 1px 0 rgba(245,240,232,0.2);
+  letter-spacing: 0.05em;
+}
+
+/* ── TORN PAPER EDGE (pseudo) ── */
+.torn-bottom::after {
+  content: '';
+  display: block;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M0,0 L5,8 L10,3 L15,10 L20,2 L25,9 L30,4 L35,11 L40,3 L45,8 L50,1 L55,9 L60,4 L65,10 L70,2 L75,7 L80,12 L85,5 L90,9 L95,2 L100,8 L105,3 L110,7 L115,1 L120,6 L120,12 L0,12 Z' fill='%23F5F0E8'/%3E%3C/svg%3E");
+  background-size: 120px 12px;
+  background-repeat: repeat-x;
+}
+
+.torn-top::before {
+  content: '';
+  display: block;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M0,6 L5,10 L10,3 L15,8 L20,2 L25,9 L30,4 L35,11 L40,3 L45,8 L50,1 L55,7 L60,4 L65,10 L70,2 L75,7 L80,12 L85,5 L90,9 L95,2 L100,8 L105,3 L110,7 L115,1 L120,6 L120,0 L0,0 Z' fill='%23F5F0E8'/%3E%3C/svg%3E");
+  background-size: 120px 12px;
+  background-repeat: repeat-x;
+}
+
+/* ── RAILWAY TICKET ── */
+.ticket-perforation {
+  border-left: 2px dashed rgba(0,0,0,0.3);
+  margin-left: 12px;
+  padding-left: 12px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes stamp-in {
+  0%   { transform: scale(1.4) rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(0.95) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes paper-drop {
+  0%   { transform: translateY(-20px) rotate(-5deg); opacity: 0; }
+  70%  { transform: translateY(4px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+@keyframes ink-bleed {
+  from { opacity: 0; max-height: 0; clip-path: inset(0 100% 0 0); }
+  to   { opacity: 1; max-height: 200px; clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes flip-char {
+  0%   { transform: rotateX(0deg); }
+  50%  { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+@keyframes grow-plant {
+  from { transform: scaleY(0); transform-origin: bottom center; }
+  to   { transform: scaleY(1); transform-origin: bottom center; }
+}
+
+@keyframes soil-stack {
+  from { transform: scaleY(0) translateY(10px); }
+  to   { transform: scaleY(1) translateY(0); }
+}
+
+@keyframes crumple-in {
+  0%   { transform: translateY(-60px) rotate(-20deg) scale(0.5); opacity: 0; }
+  70%  { transform: translateY(8px) rotate(5deg) scale(1.05); }
+  100% { transform: translateY(0) rotate(2deg) scale(1); opacity: 1; }
+}
+
+/* ── SPLIT-FLAP DISPLAY ── */
+.split-flap-cell {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  perspective: 200px;
+}
+
+.split-flap-cell.flipping {
+  animation: flip-char 0.3s ease-in-out;
+}
+
+/* ── ABACUS BEAD ── */
+.abacus-bead {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #E8841A, #993300);
+  border: 2px solid #6B2300;
+  cursor: grab;
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.3), 2px 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.abacus-bead:active { cursor: grabbing; }
+.abacus-bead.active { background: radial-gradient(circle at 35% 35%, #FFB347, #E8841A); }
+
+/* ── LETTER PAPER ── */
+.letter-paper {
+  background: #FDFAF5;
+  border: 1px solid #D4C9A8;
+  font-family: var(--font-en);
+  position: relative;
+  /* Ruled lines */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    #D4C9A8 28px
+  );
+  background-size: 100% 28px;
+  background-position: 0 32px;
+}
+
+.official-letter {
+  background: var(--paper);
+  border-left: 6px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+/* ── WARLI / FOLK ART PATTERNS (CSS-drawn) ── */
+.folk-pattern-hindi {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0px, transparent 8px,
+    rgba(232,132,26,0.15) 8px, rgba(232,132,26,0.15) 9px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    transparent 0px, transparent 8px,
+    rgba(232,132,26,0.1) 8px, rgba(232,132,26,0.1) 9px
+  );
+}
+
+.folk-pattern-marathi {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(42,122,111,0.12) 2px,
+    transparent 2px
+  );
+  background-size: 16px 16px;
+}
+
+.folk-pattern-tamil {
+  background-image:
+    linear-gradient(30deg, rgba(42,122,111,0.1) 12%, transparent 12.5%, transparent 87%, rgba(42,122,111,0.1) 87.5%),
+    linear-gradient(150deg, rgba(42,122,111,0.1) 12%, transparent 12.5%, transparent 87%, rgba(42,122,111,0.1) 87.5%),
+    linear-gradient(30deg, rgba(42,122,111,0.1) 12%, transparent 12.5%, transparent 87%, rgba(42,122,111,0.1) 87.5%),
+    linear-gradient(150deg, rgba(42,122,111,0.1) 12%, transparent 12.5%, transparent 87%, rgba(42,122,111,0.1) 87.5%);
+  background-size: 20px 35px;
+  background-position: 0 0, 0 0, 10px 18px, 10px 18px;
+}
+
+.folk-pattern-telugu {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0px, transparent 10px,
+    rgba(232,132,26,0.1) 10px, rgba(232,132,26,0.1) 11px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    transparent 0px, transparent 10px,
+    rgba(232,132,26,0.1) 10px, rgba(232,132,26,0.1) 11px
+  );
+}
+
+.folk-pattern-bengali {
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(192,57,43,0.1) 3px, transparent 3px);
+  background-size: 20px 20px;
+}
+
+.folk-pattern-english {
+  background-image: repeating-linear-gradient(
+    -55deg,
+    transparent 0, transparent 4px,
+    rgba(26,26,26,0.06) 4px, rgba(26,26,26,0.06) 8px
+  );
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
