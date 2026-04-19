@@ -48,6 +48,7 @@ The design is intentional: inspired by Indian government notices, railway ticket
 | Backend (prod) | Vercel Serverless Functions |
 | Hosting | Vercel |
 | Fonts | Noto Sans Devanagari · Roboto Mono · Space Grotesk |
+| Testing | Vitest |
 
 ---
 
@@ -84,6 +85,13 @@ fd-saathi/
 │   │   └── LanguageSelector    # Onboarding language picker
 │   ├── utils/language.js       # i18n + numeral conversion
 │   └── data/fdData.js          # Frontend fallback data
+├── src/
+│   └── __tests__/
+│       ├── fdData.test.js      # calcMaturity, calcInterestEarned, data integrity
+│       └── language.test.js    # toLocalNumeral, formatDualRate, translations
+├── api/
+│   └── __tests__/
+│       └── rates.test.js       # /api/rates handler
 ├── server.js                   # Local Express server (dev)
 └── vercel.json                 # Vercel config
 ```
@@ -110,6 +118,14 @@ Get a free key at [aistudio.google.com/apikey](https://aistudio.google.com/apike
 node server.js   # Terminal 1 — API on port 3001
 npm run dev      # Terminal 2 — Frontend on port 5173
 ```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+38 tests across FD calculation logic, language/numeral utilities, and the rates API handler.
 
 ---
 
