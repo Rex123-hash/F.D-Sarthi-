@@ -9,6 +9,18 @@
 
 ---
 
+## Screenshots
+
+| Language Selector | AI Advisor |
+|---|---|
+| ![Language Selector](docs/screenshot-language.png) | ![AI Advisor](docs/screenshot-advisor.png) |
+
+| Abacus Simulator | FAQ / Help |
+|---|---|
+| ![Abacus Simulator](docs/screenshot-simulator.png) | ![FAQ](docs/screenshot-faq.png) |
+
+---
+
 ## The Problem
 
 India has over 400 million first-time investors — most of them in Tier 2 and 3 cities. Fixed Deposits are the most trusted savings instrument in these communities, yet the language used by banks is formal English or heavily jargon-laden Hindi. Terms like *compound interest*, *DICGC insurance*, *TDS deduction*, and *premature withdrawal penalty* create a trust barrier that pushes people away from making informed decisions.
