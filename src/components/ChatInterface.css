@@ -353,9 +353,13 @@
 
 .chat-input-wrap {
   flex: 1;
+  flex-shrink: 0;
+  min-width: 0;
   border: 2px solid var(--ink);
   background: var(--paper);
   box-shadow: 3px 3px 0 var(--ink);
+  height: 58px;
+  overflow: hidden;
 }
 
 .chat-input {

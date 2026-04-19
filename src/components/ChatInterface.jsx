@@ -247,6 +247,7 @@ export default function ChatInterface({ language, onLanguageChange, rates }) {
             placeholder={t('placeholder', language)}
             rows={2}
             disabled={loading}
+            style={{ height: '100%', display: 'block' }}
           />
         </div>
         <motion.button
